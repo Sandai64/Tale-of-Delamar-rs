@@ -1,5 +1,7 @@
+// Local Game libs
 mod structs;
 mod io;
+mod map;
 
 fn main()
 {

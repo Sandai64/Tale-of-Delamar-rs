@@ -19,67 +19,75 @@ impl WeaponType
 
 pub struct Player
 {
-    name:      String,
-    inventory: PlayerInventory,
-    health:    f32,
-    position:  String, // Room UUID
+    pub name:      String,
+    pub inventory: PlayerInventory,
+    pub health:    f32,
+    pub position:  String, // Room UUID
 }
 
 pub struct PlayerInventory
 {
-    armor:   Option<Armor>,
-    weapon:  Option<Weapon>,
-    clothes: Option<Clothes>,
+    pub armor:   Option<Armor>,
+    pub weapon:  Option<Weapon>,
+    pub clothes: Option<Clothes>,
 }
 
 pub struct Armor
 {
-    protection_score: f32,
-    durability:       f32,
+    pub protection_score: f32,
+    pub durability:       f32,
 }
 
 pub struct Weapon
 {
-    damage_score: f32,
-    durability:   f32,
-    weapon_type:  WeaponType,
+    pub damage_score: f32,
+    pub durability:   f32,
+    pub weapon_type:  WeaponType,
 }
 
 pub struct Clothes
 {
-    style_score: f32,
+    pub style_score: f32,
 }
 
-#[non_exhaustive]
-pub struct HealthType;
-impl HealthType
+
+enum HealthType
 {
-    pub const FOOD:     &str = "Food";
-    pub const BAND_AID: &str = "Band-aid";
-    pub const POTION:   &str = "Potion";
+    POTION,
+    BAND_AID,
+    FOOD,
 }
+
+// #[non_exhaustive]
+// pub struct HealthType;
+// impl HealthType
+// {
+//     pub const FOOD:     &str = "Food";
+//     pub const BAND_AID: &str = "Band-aid";
+//     pub const POTION:   &str = "Potion";
+// }
 
 pub struct Health
 {
-    health_type: HealthType,
-    health_score: f32,
+    pub health_type: HealthType,
+    pub health_score: f32,
 }
 
 pub struct Clerk
 {
-    selling_weapon: Weapon,
-    selling_health: Health,
+    pub selling_weapon: Option<Weapon>,
+    pub selling_health: Option<Health>,
 }
 
 pub struct Enemy
 {
-    damage_value: f32,
+    pub damage_value: f32,
 }
 
 pub struct Room
 {
-    enemies: Option<Vec<Enemy>>,
-    clerk:   Option<Clerk>,
-    previous_room: Option<String>,
-    next_room:     String,
+    pub enemies: Option<Vec<Enemy>>,
+    pub clerk:   Option<Clerk>,
+    pub previous_room: Option<String>,
+    pub next_room:     String,
 }
