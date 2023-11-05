@@ -29,21 +29,20 @@ Thus, a "save file" essentially boils down to saving seed values & differential 
 - The player shall acquire gear in specific inventory slots defined for that purpose, such as but not limited to :
   - *Armors* (TBD)
   - *Weapons*
-
+  (*The game shall feature an i18n module*)
   ```rust
-  pub struct WeaponType;
-  impl WeaponType
+  pub enum WeaponType
   {
-      pub const SHOVEL:            &str = "Shovel";
-      pub const BASEBALL_BAT:      &str = "Baseball Bat";
-      pub const SWORD:             &str = "Sword";
-      pub const AMERICAN_KNUCKLES: &str = "American Knuckles";
-      pub const COOKING_PAN:       &str = "Cooking Pan";
-      pub const CHAIR:             &str = "Chair";
-      pub const AXE:               &str = "Axe";
-      pub const TELESCOPIC_BATON:  &str = "Telescopic Baton";
-      pub const STATS_TEXTBOOK:    &str = "Stats Textbook";
-      pub const DRUM_STICKS:       &str = "Drum Sticks";
+    SHOVEL,
+    BASEBALL_BAT,
+    SWORD,
+    AMERICAN_KNUCKLES,
+    COOKING_PAN,
+    CHAIR,
+    AXE,
+    TELESCOPIC_BATON,
+    STATS_TEXTBOOK,
+    DRUM_STICKS,
   }
   ```
 
